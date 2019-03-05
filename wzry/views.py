@@ -13,7 +13,8 @@ def responseData(code, data, msg):
 
 
 def readHerolist():
-    file = open('./wzry/templates/hero_list.json', 'r', encoding='utf-8')
+    # file = open('./wzry/templates/hero_list.json', 'r', encoding='utf-8')
+    file = open('./templates/hero_list.json', 'r', encoding='utf-8')
     ret = json.load(file)
     file.close()
     return ret
