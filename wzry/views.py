@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 import json
 
+import os.path
+
 
 def defaultRet(data):
     return responseData(0, data, '')
@@ -13,8 +15,12 @@ def responseData(code, data, msg):
 
 
 def readHerolist():
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    file_path = BASE_DIR + '/templates/hero_list.json'
     # file = open('./wzry/templates/hero_list.json', 'r', encoding='utf-8')
-    file = open('./templates/hero_list.json', 'r', encoding='utf-8')
+    file = open(file_path, 'r', encoding='utf-8')
+
+
     ret = json.load(file)
     file.close()
     return ret
