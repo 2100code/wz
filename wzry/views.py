@@ -14,15 +14,15 @@ def responseData(code, data, msg):
 
 
 
-# def readHerolist():
-#     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#     file_path = BASE_DIR + '/templates/hero_list.json'
-#     # file = open('./wzry/templates/hero_list.json', 'r', encoding='utf-8')
-#     file = open(file_path, 'r', encoding='utf-8')
-#
-#     ret = json.load(file)
-#     file.close()
-#     return ret
+def readHeroDetaillist():
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    file_path = BASE_DIR + '/templates/hero_list.json'
+    # file = open('./wzry/templates/hero_list.json', 'r', encoding='utf-8')
+    file = open(file_path, 'r', encoding='utf-8')
+
+    ret = json.load(file)
+    file.close()
+    return ret
 
 
 def readHerolist():
@@ -52,7 +52,7 @@ def herolist(request):
 
 
 def hero(request, nameNum):
-    array = readHerolist();
+    array = readHeroDetaillist();
     ret = {}
     for heroObject in array:
         num = heroObject['ename']
